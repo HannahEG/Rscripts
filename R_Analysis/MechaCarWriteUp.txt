@@ -1,0 +1,80 @@
+RESULTS
+
+MULTIPLE LINEAR REGRESSION:
+Call:
+lm(formula = mpg ~ vehicle_weight + spoiler_angle + ground_clearance, 
+    data = mechacar_mpg)
+
+Coefficients:
+     (Intercept)    vehicle_weight     spoiler_angle  ground_clearance  
+       1.273e+01         5.794e-04         4.591e-02         2.061e+00  
+SUMMARY:
+Call:
+lm(formula = mpg ~ vehicle_weight + spoiler_angle + ground_clearance, 
+    data = mechacar_mpg)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-29.476  -9.423  -2.257   7.159  33.567 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)  
+(Intercept)      1.273e+01  1.585e+01   0.803   0.4259  
+vehicle_weight   5.794e-04  1.180e-03   0.491   0.6257  
+spoiler_angle    4.591e-02  1.135e-01   0.404   0.6877  
+ground_clearance 2.061e+00  8.745e-01   2.357   0.0227 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 15.12 on 46 degrees of freedom
+Multiple R-squared:  0.1152,	Adjusted R-squared:  0.05748 
+F-statistic: 1.996 on 3 and 46 DF,  p-value: 0.1277
+
+
+EXPLANATION
+
+Which variables/coefficients provided a non-random amount of variance to the mpg values in the dataset?
+Based on the summary results, the only variable which statistically provides non-random variance is ground clearance. Vehicle weight and spoiler angle as well as the intercept values provide statistically significant random variance.
+
+Is the slope of the linear model considered to be zero? Why or why not?
+The slope of a linear model with individual variables of spoiler angle and vehicle weight are statistically likely to be zero with little relationship to the dependent value of mpg. However,the ground clearance variable has a p value statistically insignificant; therefore, the slop of the line for ground clearance is likely to be related to mpg with a slop not equal to zero.
+
+Does this linear model predict mpg of MechaCar prototypes effectively? Why or why not?
+Based on the R^2 factor, this model is not particularly good at predicting mpg of MechaCar prototypes since the R^2 factor is far from 1.
+
+
+Does the current manufacturing data meet this design specification? Why or why not?
+According to the statistics summary table the variance of PSI for suspension coils is 76.23459 which is less that 100 PSI. The current manufactoring data appears to meet the required specification.
+
+SUSPENSION RESULTS:
+
+One Sample t-test
+
+data:  (suspension_coil$PSI)
+t = -0.65784, df = 149, p-value = 0.5117
+alternative hypothesis: true mean is not equal to 1500
+95 percent confidence interval:
+ 1498.122 1500.940
+sample estimates:
+mean of x 
+ 1499.531 
+
+EXPLANATION OF T-TEST:
+The mean of the suspension coil PSI provided is not statistically different from the 
+overall mean of the population. The population mean is 1500 PSI. The suspension coil provided mean is 1499.53 PSI. Compared to the .05 significance level, the tested p-value is .51 which is greater than the established .05. It is statistically accurate to say the tested suspension coils are a good reprensentation of the population coils.
+
+STATISTICAL STUDY AND DESIGN:
+
+To quantify how MechaCar outperforms market competition the following metrics would be used to compare MechaCar to at least two other significant competitors: price, fuel efficiency, and color options.
+
+The question to ask would be, "Is there a statistical difference between the means of all of the established competitor metrics?"
+The null hypothesis would be: the means of all groups are equal
+The alternative hypothesis would be: at least one of the means is different from the other groups.
+It would be useful to conduct an ANOVA test for statistical analysis across more than one competitor.
+Necessary data collection is determined by the established metrics: price, fuel efficiency, color options of vehicles for each competitor.
+
+
+
+
+
+
